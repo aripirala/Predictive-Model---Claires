@@ -90,6 +90,7 @@ train_X, test_X, train_y, test_y = train_test_split(data_dummy_df, response_df,
                                                     )
 
 #### linear model without weather data ########
+### without standardizing the data ########
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.linear_model import LinearRegression
 
@@ -106,7 +107,34 @@ print(" Root Mean squared error: %.2f"
 # Explained variance score: 1 is perfect prediction
 print('Variance score: %.2f' % r2_score(test_y, test_pred))
 
+########## End ########################################
 
-#### model with weather data incorporated #########
+
+##### model after standardizing the data ##########
+
+##from sklearn.pipeline import make_pipeline
+##from sklearn.preprocessing import StandardScaler
+
+np.random.seed(123)
+#Est_StdSca_LM = make_pipeline(StandardScaler(),LinearRegression())
+
+Est_StdSca_LM = LinearRegression(normalize=True)
+
+Est_StdSca_LM.fit(train_X,train_y).score(test_X,test_y)
+
+test_pred = Est_StdSca_LM.predict(test_X)
+
+print('Coefficients: \n', Est_StdSca_LM.coef_)
+# The mean squared error
+print(" Root Mean squared error: %.2f"
+      % np.sqrt(mean_squared_error(test_y, test_pred)))
+# Explained variance score: 1 is perfect prediction
+print('Variance score: %.2f' % r2_score(test_y, test_pred))
 
 
+###################End ####################################
+
+### Conclusion ######
+### LM is overfitting even after normalizing hte data ###
+###  Root Mean squared error: 545.92
+#### Variance score: 0.74 ####
