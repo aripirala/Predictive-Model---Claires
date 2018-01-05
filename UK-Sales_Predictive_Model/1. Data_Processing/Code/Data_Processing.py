@@ -64,6 +64,9 @@ weather_cols = ['Airport_Code', 'Transaction_Date', 'rain', 'snow', 'meantempi',
 weather_subset_df = weather_df[weather_cols]
 weather_subset_df = pd.merge(weather_subset_df,store_airportCode_df, how='left', on=['Airport_Code'])
 
+### convert Transaction Date to Datetime object
+
+weather_subset_df.Transaction_Date = pd.to_datetime(weather_subset_df.Transaction_Date)
 sales_storeHours_hol_promo_weather_df = pd.merge(sales_storeHours_hol_promo_df, weather_subset_df, how='left', on=['Store_Number','Transaction_Date'])
 
 ###############################################################################

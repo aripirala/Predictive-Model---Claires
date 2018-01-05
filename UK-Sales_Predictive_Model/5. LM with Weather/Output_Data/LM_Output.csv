@@ -1,0 +1,150 @@
+Beta,Features
+0.7389754490647651,R2_Score
+701996427408.6282,Intercept
+11.966837819992556,Open Hours
+70.98573089523107,Labour Hours
+-6.7544209906143635,rain
+-30.095408018081628,snow
+-0.4180538752856364,meantempi
+2.1741662424986146,meandewpti
+-2.5107734965656903,meanwindspdi
+-1.0803284019154944,humidity
+31.556583870147897,precipi
+53989268096.6258,Holiday_Event_Ash Wednesday
+53989268264.828865,Holiday_Event_Autumn half term ends
+53989267911.35628,Holiday_Event_Autumn half term starts
+350624573039.4864,Holiday_Event_Bank holiday
+-394103512756.6566,Holiday_Event_Bank holiday (easter Monday)
+350624571547.1204,Holiday_Event_Christmas Eve
+53989267205.70958,Holiday_Event_Diwali
+53989267974.02885,Holiday_Event_EID
+-394103513966.5487,Holiday_Event_Easter Sunday
+53989267867.20632,Holiday_Event_Easter holidays end
+53989268108.137115,Holiday_Event_Easter holidays start
+53989268146.96525,Holiday_Event_Eid
+53989267932.05657,Holiday_Event_England/Wales Christmas holidays start
+53989268059.6905,Holiday_Event_England/Wales Summer holidays start
+53989267899.47664,Holiday_Event_Father's day
+53989268103.22989,Holiday_Event_Freshers week starts
+53989268046.282524,Holiday_Event_Half term ends
+53989268087.97977,Holiday_Event_Half term starts
+53989268194.4872,Holiday_Event_Half term starts Bank holiday
+53989267979.36938,Holiday_Event_Halloween
+53989268076.15944,Holiday_Event_International womens day
+-96825329447.5914,Holiday_Event_May day bank holiday
+53989267900.20711,Holiday_Event_Mother's day
+53989268011.98694,Holiday_Event_NI Bank holiday
+53989267865.582344,Holiday_Event_NI Christmas holidays start
+53989267890.80514,Holiday_Event_NI half term ends
+53989268056.04757,Holiday_Event_NI half term starts
+53989267900.7915,Holiday_Event_NI holidays end
+53989268337.28506,Holiday_Event_NI holidays start
+53989268019.78366,Holiday_Event_NI summer holidays start
+53989268135.5402,"Holiday_Event_NI, England & Wales bank holiday"
+350624571534.4701,Holiday_Event_New Years Eve
+53989268050.729195,Holiday_Event_None
+53989267869.62091,Holiday_Event_Ramadan starts
+53989268012.28718,Holiday_Event_ST PATRICKS DAY (NI BHOL)
+53989268461.22201,Holiday_Event_Scotland Bank holiday
+53989269144.131584,Holiday_Event_Scotland summer holidays end
+53989268099.434875,Holiday_Event_Scotland summer holidays start
+53989268314.27632,Holiday_Event_Scottish Christmas holidays start
+53989268671.391014,Holiday_Event_Scottish holidays start Bank holiday (good Friday)
+53989268067.0503,Holiday_Event_Shrove Tuesday
+53989268221.04842,Holiday_Event_Valentines day
+53989267951.185524,Holiday_Event_World book day
+-278200398853.59924,Holiday_Period_All School hols
+-127385800523.45337,Holiday_Period_Bank Holiday
+-574835703094.8398,Holiday_Period_Christmas
+169892383037.00577,Holiday_Period_Easter
+-278200398616.9389,Holiday_Period_Halloween
+-278200398402.04584,Holiday_Period_Halloween - School
+-278200397948.4644,Holiday_Period_NI School hols
+-278200398216.37714,Holiday_Period_NI/England/Wales School hols
+-278200398685.1853,Holiday_Period_NI/Scot school hols
+-278200398779.4295,Holiday_Period_None
+-278200398343.95935,Holiday_Period_School hols
+-278200398721.624,Holiday_Period_Scotland School hols
+-278200398815.2624,Holiday_Period_St Patricks
+-278200398405.89636,Holiday_Period_Valentines
+555990760638.6006,Promo_CC & Lic
+555990760258.5782,Promo_ES342
+555990760342.416,Promo_ESB3G2
+555990760495.0139,Promo_ESB3G3
+555990760676.989,Promo_Ears 342
+555990760457.9581,Promo_Ears 342 & RBJ BOG50% & Plush BOG50%
+555990760540.817,Promo_Ears 342 & RBJ BOGO50%
+555990760358.7734,Promo_Ears 342 / Hair 342
+555990760278.4137,Promo_Hair & Ears 342
+555990760457.3639,Promo_Hair & Jwly 342
+555990760379.5729,Promo_Hair & Jwly B3G2
+555990760567.6223,Promo_Hair 342
+326643574946.0013,Sales_Promo_342
+326643574585.43994,Sales_Promo_345
+326643574845.196,Sales_Promo_545
+326643575052.3517,Sales_Promo_10 FOR 5
+326643574736.73096,Sales_Promo_342 / BOGOF
+326643574756.8768,Sales_Promo_75% OFF
+326643575244.86285,Sales_Promo_75% Off
+326643574695.66614,Sales_Promo_B3G3
+-121449207388.29843,Sales_Promo_€2 DOT
+-1397736330032.7593,Cluster_0
+-1397736329960.7422,Cluster_1
+-1397736329304.2156,Cluster_2
+-1397736330195.918,Cluster_3
+69512366198.75444,Day_of_Week_0
+69512366242.80229,Day_of_Week_1
+69512366289.81378,Day_of_Week_2
+69512366354.12062,Day_of_Week_3
+69512366515.56528,Day_of_Week_4
+69512367216.30101,Day_of_Week_5
+69512366746.03668,Day_of_Week_6
+-32195668801.569332,Week_Num_4
+-32195668809.01118,Week_Num_5
+-32195669184.609276,Week_Num_6
+-32195668933.9687,Week_Num_7
+-32195668596.350132,Week_Num_8
+-32195668605.889835,Week_Num_9
+-32195668734.807274,Week_Num_10
+-32195668689.19728,Week_Num_11
+-32195668613.616554,Week_Num_12
+-32195669172.204685,Week_Num_13
+-32195668824.54722,Week_Num_14
+-32195668965.951,Week_Num_15
+-32195668693.195118,Week_Num_16
+-32195668544.3795,Week_Num_17
+-32195668643.3191,Week_Num_18
+-32195668534.66647,Week_Num_19
+-32195668474.773457,Week_Num_20
+-32195668385.15176,Week_Num_21
+-32195668478.648647,Week_Num_22
+-32195668427.35964,Week_Num_23
+-32195668338.209454,Week_Num_24
+-32195668360.25211,Week_Num_25
+-32195668318.810925,Week_Num_26
+-32195668418.086277,Week_Num_27
+-32195668442.951424,Week_Num_28
+-32195668353.418327,Week_Num_29
+-32195668119.451756,Week_Num_30
+-32195668205.46058,Week_Num_31
+-32195668991.24494,Week_Num_32
+-32195668976.55343,Week_Num_33
+-32195668880.860634,Week_Num_34
+-32195668808.792217,Week_Num_35
+-32195668616.17347,Week_Num_36
+-32195668828.17167,Week_Num_37
+-32195668898.922188,Week_Num_38
+-32195668937.796047,Week_Num_39
+-32195668944.94911,Week_Num_40
+-32195669121.163418,Week_Num_41
+-32195669151.729595,Week_Num_42
+-32195668602.49389,Week_Num_43
+-32195669052.56579,Week_Num_44
+-32195668908.167637,Week_Num_45
+-32195668824.226086,Week_Num_46
+-32195668712.952698,Week_Num_47
+-32195668581.243855,Week_Num_48
+-32195668414.86868,Week_Num_49
+-32195668265.091537,Week_Num_50
+-32195667965.693092,Week_Num_51
+-32195667825.175747,Week_Num_52

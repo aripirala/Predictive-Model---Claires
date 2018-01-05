@@ -98,35 +98,39 @@ print('Coefficients: \n', LM.coef_)
 # The mean squared error
 print(" Root Mean squared error: %.2f"
       % np.sqrt(mean_squared_error(test_y, test_pred)))
+
+score= r2_score(test_y, test_pred)
 # Explained variance score: 1 is perfect prediction
-print('Variance score: %.2f' % r2_score(test_y, test_pred))
+print('Variance score: %.2f' %score )
 
 ########## End ########################################
 
+
 #####Output the Model into File ######
-lm_coeff = pd.DataFrame(LM.coef_)
+lm_coeff_df = pd.DataFrame(LM.coef_)
+lm_coeff_df['Features'] = test_X.columns
+
+lm_coeff_df.columns = ['Beta','Features']
+
+LM_intercept = []
+LM_intercept.append(LM.intercept_)
+lm_intercept_df = pd.DataFrame(LM_intercept).transpose()
+lm_intercept_df['Features'] = 'Intercept'
+
+lm_intercept_df.columns = ['Beta','Features']
 
 
-##### model after standardizing the data ##########
+LM_score = []
+LM_score.append(score)
+lm_score_df = pd.DataFrame(LM_score).transpose()
+lm_score_df['Features'] = 'R2_Score'
 
-##from sklearn.pipeline import make_pipeline
-##from sklearn.preprocessing import StandardScaler
+lm_score_df.columns = ['Beta','Features']
 
-np.random.seed(123)
-#Est_StdSca_LM = make_pipeline(StandardScaler(),LinearRegression())
+lm_output_df = pd.merge(lm_score_df, lm_intercept_df,how="outer")
+lm_output_df = pd.merge(lm_output_df, lm_coeff_df,how="outer")
 
-Est_StdSca_LM = LinearRegression(normalize=True)
-
-Est_StdSca_LM.fit(train_X,train_y).score(test_X,test_y)
-
-test_pred = Est_StdSca_LM.predict(test_X)
-
-print('Coefficients: \n', Est_StdSca_LM.coef_)
-# The mean squared error
-print(" Root Mean squared error: %.2f"
-      % np.sqrt(mean_squared_error(test_y, test_pred)))
-# Explained variance score: 1 is perfect prediction
-print('Variance score: %.2f' % r2_score(test_y, test_pred))
+lm_output_df.to_csv(FILE_PATH_OUTPUT+'LM_Output.csv',index=False)
 
 
 ###################End ####################################
