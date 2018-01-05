@@ -1,11 +1,9 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler 
 from sklearn.pipeline import make_pipeline
 import numpy as np
 import seaborn as sns
-from sklearn.model_selection import GridSearchCV
 
 
 FILE_PATH = 'W:/B&M/Store Segmentation/Predictive Model/EU - Model/UK/'

@@ -10,7 +10,7 @@ FILE_PATH_INPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Mod
 
 FILE_PATH_OUTPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Model---Claires/UK-Sales_Predictive_Model/2. Clustering/Output_Data/'
 
-sales_df = pd.read_excel(FILE_PATH_INPUT+'Sales-StoreHours-Hol-Promo.xlsx', sheetname='Data')
+sales_df = pd.read_excel(FILE_PATH_INPUT+'Sales-StoreHours-Hol-Promo-Weather.xlsx', sheetname='Data')
 
 ### Assign the right data types to the features. for example, store number should be categorical
 

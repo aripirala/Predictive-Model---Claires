@@ -10,7 +10,12 @@ hol_df = pd.read_excel(FILE_PATH_INPUT+'Holiday_Data.xlsm', sheetname='Holiday_D
 sales_df = pd.read_excel(FILE_PATH_INPUT+'Sales_Data.xlsm', sheetname='Sales_Data')
 store_hours_df = pd.read_excel(FILE_PATH_INPUT+'Store_Hours_Data.xlsm', sheetname='Store_Hours')
 weather_df = pd.read_csv(FILE_PATH_INPUT+'weather_vF2.csv', parse_dates = True )
+store_airportCode_df = pd.read_csv(FILE_PATH_INPUT+'Branch_AirportCode_mapping.csv')
 
+
+
+#### rename columns in weather df #####
+weather_df.rename(columns = {'City':'Airport_Code', 'Date':'Transaction_Date'}, inplace=True)
 ### Assign the right data types to the features. for example, store number should be categorical
 
 sales_df['Store_Number'] = sales_df.Store_Number.astype('category')
@@ -28,7 +33,7 @@ def extract_weeknum(date):
     return date.week
 
 
-###############################################################################################
+###########################################################################################
     
 ######### Join various data frames to get one unified dataframe ################ 
 sales_storeHours_df = pd.merge(sales_df, store_hours_df,
@@ -52,12 +57,23 @@ sales_storeHours_hol_promo_df['Day_of_Week']  = sales_storeHours_hol_promo_df.Tr
 sales_storeHours_hol_promo_df['Week_Num'] = sales_storeHours_hol_promo_df.Transaction_Date.apply(extract_weeknum)
 ###############################################################################
 
+###### Merge the weather data into main dataframe #############################
+weather_cols = ['Airport_Code', 'Transaction_Date', 'rain', 'snow', 'meantempi', 
+       'meandewpti', 'meanwindspdi', 'humidity', 'precipi']
+
+weather_subset_df = weather_df[weather_cols]
+weather_subset_df = pd.merge(weather_subset_df,store_airportCode_df, how='left', on=['Airport_Code'])
+
+sales_storeHours_hol_promo_weather_df = pd.merge(sales_storeHours_hol_promo_df, weather_subset_df, how='left', on=['Store_Number','Transaction_Date'])
+
+###############################################################################
+
 #### filter out any records with open hours less than 0 ###
 
-sales_storeHours_hol_promo_df = sales_storeHours_hol_promo_df.loc[sales_storeHours_hol_promo_df['Open Hours']>0,:]
+sales_storeHours_hol_promo_weather_df = sales_storeHours_hol_promo_weather_df.loc[sales_storeHours_hol_promo_df['Open Hours']>0,:]
 
 ######## save the dataframe ##############################
 
-writer = pd.ExcelWriter(FILE_PATH_OUTPUT+'Sales-StoreHours-Hol-Promo.xlsx')
-sales_storeHours_hol_promo_df.to_excel(writer,'Data')
+writer = pd.ExcelWriter(FILE_PATH_OUTPUT+'Sales-StoreHours-Hol-Promo-Weather.xlsx')
+sales_storeHours_hol_promo_weather_df.to_excel(writer,'Data')
 writer.save()

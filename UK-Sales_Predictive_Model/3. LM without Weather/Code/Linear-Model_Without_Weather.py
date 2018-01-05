@@ -1,11 +1,5 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from sklearn.preprocessing import StandardScaler 
-from sklearn.pipeline import make_pipeline
 import numpy as np
-import seaborn as sns
-from sklearn.model_selection import GridSearchCV
 
 
 FILE_PATH_INPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Model---Claires/UK-Sales_Predictive_Model/3. LM without Weather/Input_Data/'
@@ -13,7 +7,7 @@ FILE_PATH_INPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Mod
 FILE_PATH_OUTPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Model---Claires/UK-Sales_Predictive_Model/3. LM without Weather/Output_Data/'
 
 # Import required datasets from excel
-sales_storeHours_hol_promo_df = pd.read_excel(FILE_PATH_INPUT+'Sales-StoreHours-Hol-Promo.xlsx', sheetname='Data')
+sales_storeHours_hol_promo_df = pd.read_excel(FILE_PATH_INPUT+'Sales-StoreHours-Hol-Promo-Weather', sheetname='Data')
 sales_agg_df = pd.read_csv(FILE_PATH_INPUT+'Sales_agg_cluster-k4.csv')
 
 ### Assign the right data types to the features. for example, store number should be categorical
@@ -109,6 +103,9 @@ print('Variance score: %.2f' % r2_score(test_y, test_pred))
 
 ########## End ########################################
 
+#####Output the Model into File ######
+lm_coeff = pd.DataFrame(LM.coef_)
+
 
 ##### model after standardizing the data ##########
 
@@ -138,3 +135,4 @@ print('Variance score: %.2f' % r2_score(test_y, test_pred))
 ### LM is overfitting even after normalizing hte data ###
 ###  Root Mean squared error: 545.92
 #### Variance score: 0.74 ####
+
