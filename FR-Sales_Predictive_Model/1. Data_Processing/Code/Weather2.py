@@ -3,6 +3,7 @@
 Created on Tue Oct 31 12:54:02 2017
 
 @author: aripiralas
+edited by Ke Xing@1/18/2013
 """
 ## url = 'http://api.wunderground.com/api/eec4c24fa3e74d09/history_20171105/q/MD/Baltimore.json'
 

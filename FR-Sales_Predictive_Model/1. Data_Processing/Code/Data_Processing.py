@@ -1,8 +1,8 @@
 import pandas as pd
 
-FILE_PATH_INPUT = 'C:/repos/UK-Sales_Predictive_Model/1. Data_Processing/Input_Data/'
+FILE_PATH_INPUT = 'C:/repos/Predictive-Model---Claires/FR-Sales_Predictive_Model/1. Data_Processing/Input_Data/'
 
-FILE_PATH_OUTPUT = 'C:/repos/UK-Sales_Predictive_Model/1. Data_Processing/Output_Data/'
+FILE_PATH_OUTPUT = 'C:/repos/Predictive-Model---Claires/FR-Sales_Predictive_Model/1. Data_Processing/Output_Data/'
 
 # Import required datasets from excel
 promo_df = pd.read_excel(FILE_PATH_INPUT+'Promo_Data.xlsm', sheet_name='Promo_Data')
