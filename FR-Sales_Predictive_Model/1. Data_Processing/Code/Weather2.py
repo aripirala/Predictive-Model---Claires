@@ -104,8 +104,8 @@ url_begin = 'http://api.wunderground.com/api/'
 
 country = 'FR'
 
-start_date = date(2016, 1, 1)
-end_date = date(2017, 1, 28)
+start_date = date(2017, 1, 29)
+end_date = date(2018, 1, 13)
 
 FILE_PATH = 'W:/B&M/Store Segmentation/Predictive Model/EU - Model/FR/'
 
@@ -146,7 +146,7 @@ weather_df = pd.DataFrame()
 
 airport_code_counter = 13
 ### loop through all the
-uk_airport_df_continue = uk_airport_df[24:]
+uk_airport_df_continue = uk_airport_df[104:]
 
 for code in uk_airport_df_continue['Airport_Code']:
     # print(code)
