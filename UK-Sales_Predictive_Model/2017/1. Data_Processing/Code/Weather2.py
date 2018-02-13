@@ -109,7 +109,7 @@ end_date = date(2017, 1, 28)
 
 FILE_PATH = 'W:/B&M/Store Segmentation/Predictive Model/EU - Model/UK/'
 
-FILE_PATH_LOCAL = 'C:/Ad hoc Analysis/Weather/'
+FILE_PATH_LOCAL = 'W:/B&M/Store Segmentation/Predictive Model/Weather/UK2017/'
 
 key_list = ['56ea777f7516c834', 'eec4c24fa3e74d09', '70628b4299bc3d8b', '4013a46d97e47844', '6f463c16cde40212',
             '59e4d5b0bfe7b0fe', '15452cb4037bdbec', 'e8b4e71b38660737', 'e36ef1805bbe364a', 'a5af324a7e3aebfb',
@@ -169,20 +169,10 @@ raw_data = pd.DataFrame()
 # read and merge all csv in a for loop
 raw_data = pd.concat((pd.read_csv(f, header=0) for f in allfiles))
 # rearrange columns to fit data_processing.py
-ready_data = raw_data[['0', '1', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26',
-                       '27', '28', '29', '3', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '4',
-                       '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '5', '50', '51', '52', '53',
-                       '54', '55', '56']]
+ready_data = raw_data[['0', '1', '4', '5', '18', '20', '24', 
+                       '29', '56']]
 # renaming the all in one file
-ready_data.rename(columns={'0': 'City', '1': 'Date', '3': 'fog', '4': 'rain', '5': 'snow', '14': 'hail',
-                           '15': 'thunder', '16': 'tornado', '17': 'meantempm', '18': 'meantempi', '19': 'meandewptm',
-                           '20': 'meandewpti', '21': 'meanpressurem', '22': 'meanpressurei', '23': 'meanwindspdm',
-                           '24': 'meanwindspdi', '25': 'meanwdire', '26': 'meanwdird', '27': 'meanvism',
-                           '28': 'meanvisi', '29': 'humidity', '30': 'maxtempm', '31': 'maxtempi', '32': 'mintempm',
-                           '33': 'mintempi', '34': 'maxhumidity', '35': 'minhumidity', '36': 'maxdewptm',
-                           '37': 'maxdewpti', '38': 'mindewptm', '39': 'mindewpti', '40': 'maxpressurem',
-                           '41': 'maxpressurei', '42': 'minpressurem', '43': 'minpressurei', '44': 'maxwspdm',
-                           '45': 'maxwspdi', '46': 'minwspdm', '47': 'minwspdi', '48': 'maxvism', '49': 'maxvisi',
-                           '50': 'minvism', '51': 'minvisi', '52': 'gdegreedays', '53': 'heatingdegreedays',
-                           '54': 'coolingdegreedays', '55': 'precipm', '56': 'precipi'}, inplace=True)
-ready_data.to_csv(FILE_PATH_LOCAL + 'weather_' + 'vF2' + '.csv', index=False)
+ready_data.rename(columns={'0': 'City', '1': 'Date', '4': 'rain', '5': 'snow',  '18': 'meantempi', 
+                           '20': 'meandewpti', '24': 'meanwindspdi', '29': 'humidity', '56': 'precipi'}, inplace=True)
+ready_data.dropna(inplace=True)
+ready_data.to_csv(FILE_PATH_LOCAL + 'weather_vF2.csv', index=False)

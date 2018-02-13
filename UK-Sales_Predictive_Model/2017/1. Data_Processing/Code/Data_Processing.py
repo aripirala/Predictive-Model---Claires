@@ -1,8 +1,8 @@
 import pandas as pd
 
-FILE_PATH_INPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Model---Claires/UK-Sales_Predictive_Model/1. Data_Processing/Input_Data/'
+FILE_PATH_INPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Model---Claires/UK-Sales_Predictive_Model/2017/1. Data_Processing/Input_Data/'
 
-FILE_PATH_OUTPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Model---Claires/UK-Sales_Predictive_Model/1. Data_Processing/Output_Data/'
+FILE_PATH_OUTPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Model---Claires/UK-Sales_Predictive_Model/2017/1. Data_Processing/Output_Data/'
 
 # Import required datasets from excel
 promo_df = pd.read_excel(FILE_PATH_INPUT+'Promo_Data.xlsm', sheetname='Promo_Data')

@@ -3,9 +3,9 @@ import numpy as np
 
 
 
-FILE_PATH_INPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Model---Claires/UK-Sales_Predictive_Model/6. LM with Weather + Lasso/Input_Data/'
+FILE_PATH_INPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Model---Claires/UK-Sales_Predictive_Model/2017/6. LM with Weather + Lasso/Input_Data/'
 
-FILE_PATH_OUTPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Model---Claires/UK-Sales_Predictive_Model/6. LM with Weather + Lasso/Output_Data/'
+FILE_PATH_OUTPUT = 'C:/Users/aripiralas/GitHub/Predictive-Modeling/Predictive-Model---Claires/UK-Sales_Predictive_Model/2017/6. LM with Weather + Lasso/Output_Data/'
 
 # Import required datasets from excel
 sales_storeHours_hol_promo_weather_df = pd.read_excel(FILE_PATH_INPUT+'Sales-StoreHours-Hol-Promo-Weather.xlsx', sheetname='Data')
