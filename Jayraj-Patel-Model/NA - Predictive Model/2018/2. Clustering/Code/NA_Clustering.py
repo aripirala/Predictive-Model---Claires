@@ -77,7 +77,7 @@ sales_agg_df.Cluster.value_counts()
 plt.figure(1,figsize=(12,8))
 sns.set_style("darkgrid")
 
-fg = sns.FacetGrid(data=sales_agg_df[['Sales','Quantity','Cluster']], hue='Cluster', hue_order=sales_agg_df.Cluster.unique(), aspect=1.61)
+fg = sns.FacetGrid(data=sales_agg_df[['Sales','Quantity','Cluster']], hue='Cluster', hue_order=sales_agg_df.Cluster.sort(), aspect=1.61)
 fg.map(plt.scatter, 'Sales', 'Quantity').add_legend()
 plt.savefig(FILE_PATH_OUTPUT+'Sales vs Qty-Kmeans.png')
 
