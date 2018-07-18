@@ -65,7 +65,11 @@ sns.lmplot('Sales', # Horizontal axis
            scatter_kws={"marker": "D", # Set marker style
                         "s": 50})
 sns.set_context("poster")
-plt.savefig(FILE_PATH_OUTPUT+'Sales vs Qty-Kmeans.png')
+#plt.savefig(FILE_PATH_OUTPUT+'Sales vs Qty-Kmeans.png')
+f, ax = plt.subplots(figsize=(8,8))
+sns.set_style("darkgrid")
+ax = sns.barplot(x="Sales", y="Quantity", hue="Cluster", data = sales_agg_df)
+plt.show()
 
 #Conclusion: Store 6349 is an outlier
-sales_agg_df.to_csv(FILE_PATH_OUTPUT+'Sales_agg_cluster-k4.csv')
+#sales_agg_df.to_csv(FILE_PATH_OUTPUT+'Sales_agg_cluster-k4.csv')

@@ -7,6 +7,8 @@ Created on Mon Jul 16 14:00:53 2018
 
 import pandas as pd
 import numpy as np
+import statistics
+import math
 
 
 FILE_PATH_INPUT = 'C:/Users/patelj/Documents/Project/Predictive-Model---Claires/Jayraj-Patel-Model/NA - Predictive Model/2018/3. LM Without Weather/Input Data/'
@@ -32,6 +34,10 @@ def extract_dayofweek(date):
 def extract_weeknum(date):
     return date.week
 
+def rmse(y, y_hat):
+    power = (y - y_hat)**2
+    mse = statistics.mean(power)
+    return math.sqrt(mse)
 ######### Data processing & clustering analysis ######################################
 
 
@@ -106,6 +112,7 @@ print('Coefficients: \n', LM.coef_)
 # The mean squared error
 print(" Root Mean squared error: %.2f"
       % np.sqrt(mean_squared_error(test_y, test_pred)))
+print("Root Mean Squared Error: ", rmse(y = test_y, y_hat = test_pred))
 
 score= r2_score(test_y, test_pred)
 # Explained variance score: 1 is perfect prediction
@@ -138,7 +145,7 @@ lm_score_df.columns = ['Beta','Features']
 lm_output_df = pd.merge(lm_score_df, lm_intercept_df,how="outer")
 lm_output_df = pd.merge(lm_output_df, lm_coeff_df,how="outer")
 
-lm_output_df.to_csv(FILE_PATH_OUTPUT+'LM_Output.csv',index=False)
+#lm_output_df.to_csv(FILE_PATH_OUTPUT+'LM_Output.csv',index=False)
 
 
 ###################End ####################################
