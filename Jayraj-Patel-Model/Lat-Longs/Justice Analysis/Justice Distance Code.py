@@ -1,0 +1,69 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Jul 23 10:46:09 2018
+
+@author: patelj
+"""
+
+from math import sin, cos, sqrt, atan2, radians
+import pandas as pd
+import numpy as np
+
+FILE_PATH_INPUT = 'C:/Users/patelj/Documents/Lat-Longs/'
+FILE_PATH_OUTPUT = 'C:/Users/patelj/Documents/Lat-Longs/Justice Analysis/'
+
+R = 6373.0
+justice_df = pd.read_excel(FILE_PATH_INPUT+'Justice-Lat-Long.xlsx', sheetname='Data')
+claires_df = pd.read_excel(FILE_PATH_INPUT+'NA-Lat-Longs.xlsm', sheetname='Data')
+print(claires_df.index)
+
+###-------Test Code for one set of coordinates-------###
+#lat1 = claires_df["Latitude"].values[1274]
+#lon1 = claires_df["Longitude"].values[1274]
+#lat2 = miniso_df["Latitude"].values[11]
+#lon2 = miniso_df["Longitude"].values[11]
+#lat1 = radians(lat1)
+#lon1 = radians(lon1)
+#lat2 = radians(lat2)
+#lon2 = radians(lon2)
+#dlon = lon2 - lon1
+#dlat = lat2 - lat1
+
+#a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
+#c = 2 * atan2(sqrt(a), sqrt(1 - a))
+
+#distance = R * c
+
+#print("Result:", distance)
+###-------End Test Code-------###
+
+dist_list = []
+#dist_output_df = pd.DataFrame(index=claires_df.index)
+for x in range(len(claires_df.index)):
+    lat1 = claires_df["Latitude"].values[x]
+    lon1 = claires_df["Longitude"].values[x]
+    lat1 = radians(lat1)
+    lon1 = radians(lon1)
+    for i in range(len(justice_df.index)):
+        lat2 = justice_df["Latitude"].values[i]
+        lon2 = justice_df["Longitude"].values[i]
+        lat2 = radians(lat2)
+        lon2 = radians(lon2)
+    
+        dlon = lon2 - lon1
+        dlat = lat2 - lat1
+
+        a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
+        c = 2 * atan2(sqrt(a), sqrt(1 - a))
+
+        distance = R * c
+        miles_dist = distance * 0.621371
+
+        print("Result:", miles_dist)
+        dist_list.append(miles_dist)
+
+new_list = np.array(dist_list)
+new_list = new_list.reshape(len(claires_df.index),len(justice_df.index))
+
+dist_output_df = pd.DataFrame(new_list)        
+dist_output_df.to_excel(FILE_PATH_OUTPUT+'Justice Distance Output 2.xlsx')

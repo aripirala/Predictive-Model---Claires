@@ -95,8 +95,6 @@ zero_features_bool = [x not in ['Day_of_Week_3'] for x in list(zero_features)]  
 
 ### drop the insigficant columns identified through lasso model ###
 data_dummy_lasso_drop_df = data_dummy_df.loc[:,~data_dummy_df.columns.isin(list(zero_features[zero_features_bool]))]
-#drop_cols = ['Holiday_Period_None', 'Promo_B3G3F', 'Sales_Promo_None']
-#data_dummy_lasso_drop_df = data_dummy_df.drop(drop_cols, axis=1)
 
 #### drop columns to account for catagorical variables ########
 drop_catergorical_cols = ['Day_of_Week_0', 'Week_Num_5', 'Cluster_0']
@@ -110,7 +108,7 @@ print(data_dummy_lasso_drop_df.shape)
 
 from sklearn.model_selection import train_test_split
 
-train_X, test_X, train_y, test_y = train_test_split(data_dummy_df, response_df, 
+train_X, test_X, train_y, test_y = train_test_split(data_dummy_lasso_drop_df, response_df, 
                                                     train_size=0.75, 
                                                     random_state=123,
                                                     )

@@ -62,7 +62,7 @@ features = ['Transaction_Date', 'Transaction_Count',
         'Open Hours',
        'Holiday_Event', 'Holiday_Period', 'Promo', 'Sales_Promo', 'Cluster', "Justice (<1)", "Justice (<5)", "Justice (<10)", "Piercing Pagoda (<1)", "Piercing Pagoda (<5)", 
                              "Piercing Pagoda (<10)", "Miniso (<1)", "Miniso (<5)", "Miniso (<10)", "H&M (<1)", "H&M (<5)", "H&M (<10)", 
-                             "Zara (<1)", "Zara (<5)", "Zara (<10)", "Competitor Density"]
+                             "Zara (<1)", "Zara (<5)", "Zara (<10)", "Competitor Density (<1)", "Competitor Density (<5)", "Competitor Density (<10)"]
 
 response = 'Sales'
 
@@ -117,7 +117,7 @@ print(data_dummy_lasso_drop_df.shape)
 
 from sklearn.model_selection import train_test_split
 
-train_X, test_X, train_y, test_y = train_test_split(data_dummy_df, response_df, 
+train_X, test_X, train_y, test_y = train_test_split(data_dummy_lasso_drop_df, response_df, 
                                                     train_size=0.75, 
                                                     random_state=123,
                                                     )

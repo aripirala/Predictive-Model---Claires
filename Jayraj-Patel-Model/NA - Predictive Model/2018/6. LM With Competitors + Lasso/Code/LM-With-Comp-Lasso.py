@@ -60,7 +60,7 @@ features = ['Transaction_Date', 'Transaction_Count',
         'Open Hours',
        'Holiday_Event', 'Holiday_Period', 'Promo', 'Sales_Promo', 'Cluster', "Justice (<1)", "Justice (<5)", "Justice (<10)", "Piercing Pagoda (<1)", "Piercing Pagoda (<5)", 
                              "Piercing Pagoda (<10)", "Miniso (<1)", "Miniso (<5)", "Miniso (<10)", "H&M (<1)", "H&M (<5)", "H&M (<10)", 
-                             "Zara (<1)", "Zara (<5)", "Zara (<10)", "Competitor Density"]
+                             "Zara (<1)", "Zara (<5)", "Zara (<10)", "Competitor Density (<1)", "Competitor Density (<5)", "Competitor Density (<10)"]
 
 response = 'Sales'
 
