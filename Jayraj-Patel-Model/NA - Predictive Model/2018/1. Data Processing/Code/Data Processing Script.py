@@ -7,9 +7,9 @@ Created on Wed Jul 11 09:13:35 2018
 
 import pandas as pd
 
-FILE_PATH_INPUT = 'C:/Users/patelj/Documents/Jayraj Patel Model/NA - Predictive Model/2018/1. Data Processing/Input Data/'
+FILE_PATH_INPUT = 'C:/Users/patelj/Documents/Project/Predictive-Model---Claires/Jayraj-Patel-Model/NA - Predictive Model/2018/1. Data Processing/Input Data/'
 
-FILE_PATH_OUTPUT = 'C:/Users/patelj/Documents/Jayraj Patel Model/NA - Predictive Model/2018/1. Data Processing/Output Data/'
+FILE_PATH_OUTPUT = 'C:/Users/patelj/Documents/Project/Predictive-Model---Claires/Jayraj-Patel-Model/NA - Predictive Model/2018/1. Data Processing/Output Data/'
 
 # Import required datasets from excel
 promo_df = pd.read_excel(FILE_PATH_INPUT+'NA Promo Data.xlsm', sheetname='Promo_Data')
